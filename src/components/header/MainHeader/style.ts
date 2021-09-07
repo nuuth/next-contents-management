@@ -22,11 +22,6 @@ export const Image0 = styled.div<{src:string,width:number}>`
   background: url(${props => props.src}) center center;
   background-size: contain;
 `
-// export const Image0 = styled('div')<ImageProps>`
-//   width: ${props => props.width};
-//   background: url(${props => props.src}) center center;
-//   background-size: contain;
-// `
 
 
 const style = {

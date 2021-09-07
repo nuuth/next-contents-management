@@ -1,11 +1,22 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
 
-import ButtonLink from 'atoms/common/ButtonLink'
+import TopLayout from 'layouts/Top'
 
-export default function Home() {
+export type TopLayoutProps = { status: string }
+
+export const getStaticProps: GetStaticProps<TopLayoutProps> = () => {
+  return {
+    props: {
+      status: 'success',
+    },
+  }
+}
+
+export default function Home(props: TopLayoutProps) {
   return (
     <>
       <Head>
@@ -14,28 +25,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="container">
-        <div className="section">
-          <ButtonLink href="/" size="is-large" color="is-danger" isRounded isFullwidth>
-            sample
-          </ButtonLink>
-          <Wrap3>Wrap3</Wrap3>
-          <div
-            css={css`
-              font-size: 16px;
-              color: red;
-            `}
-          >
-            css props
-          </div>
-        </div>
+        <TopLayout {...props} />
       </div>
     </>
   )
 }
-
-const Wrap3 = styled.h3`
-  padding: 16px;
-  border: solid 1px silver;
-  margin: 16px 0;
-  border-radius: 4px;
-`

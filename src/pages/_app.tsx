@@ -1,14 +1,17 @@
 // import '../styles/globals.css'
 import 'bulma'
+import { RecoilRoot } from 'recoil'
+
 import type { AppProps } from 'next/app'
 
-import MainHeader from 'components/header/MainHeader'
+import AppLayout from 'layouts/AppLayout'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp(props: AppProps) {
   return (
     <>
-      <MainHeader />
-      <Component {...pageProps} />
+      <RecoilRoot>
+        <AppLayout {...props} />
+      </RecoilRoot>
     </>
   )
 }
