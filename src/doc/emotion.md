@@ -23,6 +23,7 @@ https://www.npmtrends.com/@emotion/core-vs-styled-components-vs-@emotion/styled
 ## 特徴
 
 ###　メリット
+
 * styled component記法に対応
 * css prop(要素にstyle要素を埋め込む)でも書ける
 * dl数は本家styled-componentsに次いで多い
@@ -33,6 +34,7 @@ https://www.npmtrends.com/@emotion/core-vs-styled-components-vs-@emotion/styled
 * functonも可能
 
 ###　デメリット
+
 https://blog.unimoku.com/20201106
 
 * 日本語ドキュメントがまだ少ない
@@ -103,9 +105,11 @@ import { css } from '@emotion/react'
 クラス定義として出力される
 
 ###　オブジェクトにする
+
 renderを汚したくないときや、別ファイルにする場合はスタイルをオブジェクト化しておく。
 
 #### style.ts
+
 ```ts
 import { css } from '@emotion/react'
 
@@ -138,6 +142,7 @@ import style from './style'
 ##　重複したスタイル
 
 ###　styled components
+
 - 同一componentであっても、別componentやpageであっても、同一スタイルであれば1つのクラスにマージされる
 - もともと要素名に絞ったセレクタの出力の仕方でないからか、`div`,`p`,`section`のような要素別に定義したobjectであっても、同一スタイルの場合はマージされる
   - 要素名セレクタを使えないことによるトラブルが思いつかないので、大丈夫そう？
@@ -146,6 +151,7 @@ import style from './style'
 
 
 ###　css props
+
 - 同一のcomponent内であれば、1つのクラス名の定義にマージされる
 - 別componentになると、別スタイルとなる様子
   - classの命名ルールにcomponent名が含まれるからかもしれない

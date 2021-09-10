@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 
 import ButtonLink from 'components/atoms/common/ButtonLink'
+import Input from 'components/atoms/form/Input'
 import { TopLayoutProps } from 'pages/index'
 
 const TopLayoutPC: React.FC<TopLayoutProps> = (props) => {
@@ -11,6 +12,9 @@ const TopLayoutPC: React.FC<TopLayoutProps> = (props) => {
       <div className="section">
         <div>PC</div>
         <ButtonLink href="/">{props.status}</ButtonLink>
+        <div>
+          <Input type="text" fontSize={20} />
+        </div>
       </div>
     </>
   )
